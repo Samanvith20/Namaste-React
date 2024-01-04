@@ -1,3 +1,41 @@
-#header{
-    color: black;
-}
+
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .Header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .logo img {
+    width: 100px; 
+    height: auto;
+  }
+  
+ 
+  .nav-items ul {
+    list-style: none;
+    display: flex;
+    
+  }
+  
+  .nav-items li {
+    margin-right: 25px;
+    cursor: pointer;
+    font-size: 28px;
+    
+  }
+  
+ 
+  .nav-items li:hover {
+    text-decoration: underline;
+  }
+  
