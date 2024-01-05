@@ -33,9 +33,60 @@ body, h1, h2, ul, li {
     font-size: 28px;
     
   }
-  
+  .search{
+    margin-top: 10px;
+  }
  
   .nav-items li:hover {
     text-decoration: underline;
+  }
+  .res-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+  }
+  .card-logo {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin: 10px;
+  }
+  
+  .card-logo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .card-content {
+    padding: 12px;
+  }
+  
+  .card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .card-content h4 {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .card-content p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .card-content h3 {
+    color: #333;
+  }
+  
+  .card-content h3, .card-content h4 {
+    font-family: 'Arial', sans-serif;
   }
   

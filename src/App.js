@@ -1,29 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
- const Header=()=>{
-    return(
-    <div className="Header">
-      <div className="logo">
-        <img src="https://img.freepik.com/free-vector/food-shopping-logo-template-design_460848-10299.jpg?w=740&t=st=1704371907~exp=1704372507~hmac=f2980cfab616481868e0f3b157063b28afbea0606b10f5aa2342e04d304c7b44"/>
-
-      </div>
-      <div className="nav-items">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>contact</li>
-            <li>cart</li>
-        </ul>
-
-      </div>
-    </div>
-    )
- }
-  const Applayout=()=>{
+import Header from "./Components/Header";
+import Body from "./Components/Body";
+  
+const Applayout=()=>{
     return(
      <div>
         <Header/>
-        {/* <Body/> */}
+        <Body/>
      </div>
     );
   }
