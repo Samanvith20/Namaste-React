@@ -4,7 +4,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [restaurantsData, setRestaurantsData] = useState([]);
-  console.log(restaurantsData);
+ 
   const [inputSearch, setInputSearch] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
@@ -22,8 +22,7 @@ const Body = () => {
       const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
       const json = await response.json();
       console.log(json);
-      const fetchedRestaurants =  json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-
+      const fetchedRestaurants =   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       setRestaurantsData(fetchedRestaurants);
       setFilteredRestaurants(fetchedRestaurants);
     } catch (error) {
