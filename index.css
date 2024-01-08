@@ -35,17 +35,20 @@ body, h1, h2, ul, li {
 .nav-items ul {
   list-style: none;
   display: flex;
+  color: white;
 }
 
 .nav-items li {
   margin-right: 25px;
   cursor: pointer;
   font-size: 28px;
+  color: white;
+  
 }
 
-.nav-items li:hover {
+/* .nav-items li:hover {
   text-decoration: underline;
-}
+} */
 
 .res-container {
   display: flex;
