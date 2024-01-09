@@ -27,26 +27,36 @@ const RestaurantMenu = () => {
 
   if (resinfo === null) return <Shimmer />;
 
-  const name = resinfo?.cards[2]?.card?.card?.info?.name;
-  const cuisines = resinfo?.cards[2]?.card?.card?.info?.cuisines || [];
-  const costForTwoMessage = resinfo?.cards[2]?.card?.card?.info?.costForTwoMessage;
+ 
+  const { name, cuisines, costForTwoMessage } =
+  resinfo?.cards[2]?.card?.card?.info || resinfo?.cards[0]?.card?.card?.info
 
-  const itemCards =
-    resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards || [];
+const { itemCards } =
+  resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card || 
+  resinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card ||
+  resinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card ||
+  resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card ||
+
 
   console.log(itemCards);
 
   return (
     <div>
       <h1>{name}</h1>
-      <p>{cuisines.join(",")} - {costForTwoMessage}</p>
+      <p>{cuisines && cuisines.length > 0 ? cuisines.join(", ") : "No cuisines"} - {costForTwoMessage}</p>
       <h2>Menu</h2>
       <ul>
-        {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name} - {item.card.info.price}
-          </li>
-        ))}
+      {itemCards && itemCards.length > 0 ? (
+  itemCards.map((item) => (
+    <li key={item.card.info.id}>
+      {item.card.info.name} - {item.card.info.price || - item.card.info.defaultPrice}
+    </li>
+  ))
+) : (
+ 
+  <p>No items found.</p>
+)}
+
       </ul>
     </div>
   );
