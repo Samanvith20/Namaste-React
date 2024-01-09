@@ -1,12 +1,20 @@
-import User from "./User"
 import UserClass from "./Userclass";
-const About=()=>{
-    return(
-        <div>
-        <h2>This is About Page</h2>
-        <User name={"Samanvith"} />
-           < UserClass college={"CMR TECHNICAL CAMPUS"} />
-        </div>
-    )
+import { Component } from "react";
+
+class About extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="about-section">
+        <h1>About</h1>
+        <h1 className="description">This is basically a food delivering app.</h1>
+        <UserClass />
+      </div>
+    );
+  }
 }
-export default About
+
+export default About;

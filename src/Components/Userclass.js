@@ -4,19 +4,48 @@ class Userclass extends React.Component {
    constructor(props){
    super(props);
     this.state={
-      count1:1,
-      count2:2,
+      userInfo:{
+        name:"dummyname",
+        location:"Banswada",
+        URL:""
+      }
     }
-    
-   }
+  }
+      async componentDidMount(){
+                 const url="https://api.github.com/users/Samanvith20"
+                 const data= await fetch(url)
+                 const json= await data.json();
+                 console.log(json);
+                 this.setState({
+                     userInfo:json
+                 })
+          }
+ 
     render() {
-      const{count1,count2}= this.state
+       const{name,location,url,bio}=this.state.userInfo
+     
     return (
       <div className="user-details">
-        <h1>I am student studying in {this.props.college}</h1>
-           <h2>count:{count1}</h2>
-           <h2>count:{count2}</h2>
-        <h2>Hyderabad Telangana</h2>
+        <p>My name: {name + "reddy" }</p>
+        <p>Bio: {bio}</p>
+        <p>Location: {location}</p>
+        <p>Github: <a href={url} >{url}</a></p>
+        <p>
+        LinkedIn:{" "}
+        <a href="https://www.linkedin.com/in/yervala-samanvith-reddy-60568b1b0" >
+        https://www.linkedin.com/in/yervala-samanvith-reddy-60568b1b0
+        </a>
+      </p>
+      <h3> Skills</h3>
+      <ul>
+        <li>React</li>
+        <li>JavaScript</li>
+         <li>HTML</li>
+         <li>CSS</li>
+         <li>DSA</li>
+         <li>SQL</li>
+          </ul>
+           
       </div>
     );
   }
