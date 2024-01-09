@@ -49,7 +49,13 @@ const { itemCards } =
       {itemCards && itemCards.length > 0 ? (
   itemCards.map((item) => (
     <li key={item.card.info.id}>
-      {item.card.info.name} - {item.card.info.price || - item.card.info.defaultPrice}
+       <span>{item.card.info.name}</span>
+              <span>
+                - ₹
+                {item.card.info.price
+                  ? item.card.info.price / 100
+                  : item.card.info.defaultPrice / 100}
+              </span>
     </li>
   ))
 ) : (

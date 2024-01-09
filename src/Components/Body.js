@@ -9,9 +9,12 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const handleFilterClick = () => {
-    const filteredRestaurants = restaurantsData.filter((res) => res.rating > 4);
-    setFilteredRestaurants(filteredRestaurants);
+    const filteredRestaurantsData = restaurantsData.filter((res) => res.info.avgRating > 4.5);
+    setFilteredRestaurants(filteredRestaurantsData);
   };
+  
+  
+  
 
   useEffect(() => {
     fetchData();
@@ -21,7 +24,7 @@ const Body = () => {
     try {
       const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
       const json = await response.json();
-      // console.log(json);
+      console.log(json);
       const fetchedRestaurants = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
       if (fetchedRestaurants) {
