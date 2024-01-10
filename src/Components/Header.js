@@ -14,9 +14,10 @@ const Header=()=>{
       <div className="nav-items">
         <ul>
         <li className="online">Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-            <li><Link to="/">Home</Link></li>
+          <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
+            <li> <Link to ="/grocery"> Grocery</Link></li>
             <li>cart</li>
             <button className="btn-name"
            onClick={()=>{
