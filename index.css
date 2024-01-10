@@ -53,7 +53,7 @@ body, h1, h2, ul, li {
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width:100%;
 }
 
@@ -226,6 +226,31 @@ body, h1, h2, ul, li {
 
 .user-details a:hover {
   text-decoration: underline;
+}
+.offline-message-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8d7da; /* Red background color for alert */
+  color: #721c24; /* Dark red text color */
+  border: 1px solid #f5c6cb; /* Border color for alert */
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.offline-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.offline-text {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.offline-tip {
+  font-size: 14px;
+  color: #721c24; /* Dark red text color for tip */
 }
 
 

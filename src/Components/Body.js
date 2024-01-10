@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Restaurantcards from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 const Body = () => {
   const [restaurantsData, setRestaurantsData] = useState([]);
@@ -13,9 +14,6 @@ const Body = () => {
     setFilteredRestaurants(filteredRestaurantsData);
   };
   
-  
-  
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,6 +33,20 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
+   const onlinestatus=useOnlineStatus();
+   if (onlinestatus==false) {
+    return (
+      <div className="offline-message-container">
+        <h1 className="offline-heading">Uh-oh! You're offline</h1>
+        <p className="offline-text">
+          It seems like you're not connected to the internet. Please check your connection and try again.
+        </p>
+        <p className="offline-tip">
+          Tip: You can try refreshing the page or connecting to a different network.
+        </p>
+      </div>
+    );
+  }
 
   if (restaurantsData.length === 0) {
     return <Shimmer />;
