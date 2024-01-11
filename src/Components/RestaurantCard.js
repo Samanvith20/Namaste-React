@@ -5,24 +5,37 @@ const Restaurantcards = (props) => {
   const { resdata } = props;
 
   if (!resdata) {
-    return <div>No data available</div>;
+    return <div className="text-center text-gray-500">No data available</div>;
   }
 
-  const { cloudinaryImageId,
+  const {
+    cloudinaryImageId,
     name,
     avgRating,
     cuisines,
     costForTwo,
-    sla, } = resdata.info
+    sla,
+  } = resdata.info;
 
   return (
-    <div className="card-logo">
-      <img alt="card-image" src={IMG_URL + cloudinaryImageId} />
-      <h3 className="font-bold py-4 text-lg">{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>{costForTwo} </h4>
-      <h4>{sla.deliveryTime} minutes </h4>
+    <div className="card-logo bg-white p-4 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+      <img
+        alt="card-image"
+        src={IMG_URL + cloudinaryImageId}
+        className="w-full h-40 object-cover mb-4 rounded"
+      />
+      <h3 className="font-bold text-lg mb-2">{name}</h3>
+      <div className="text-gray-600 mb-2">{cuisines.join(", ")}</div>
+      <div className="flex items-center mb-2">
+        <div className="mr-2 text-yellow-500">
+          {Array.from({ length: Math.floor(avgRating) }).map((_, index) => (
+            <span key={index}>&#9733;</span>
+          ))}
+        </div>
+        <div>{avgRating.toFixed(1)} stars</div>
+      </div>
+      <div className="text-gray-600 mb-2">Cost for Two: ${costForTwo}</div>
+      <div className="text-gray-600">Delivery Time: {sla.deliveryTime} minutes</div>
     </div>
   );
 };

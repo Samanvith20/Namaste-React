@@ -11,11 +11,11 @@ const RestaurantMenu = () => {
   const { name, cuisines, costForTwoMessage } =
     resinfo?.cards[0]?.card?.card?.info;
 
-  const { itemCards } =
-    resinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-
+    const { itemCards } =
+    resinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card ||
+    resinfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[0] || {};
+  
   console.log(itemCards);
-
   return (
     <div>
       <h1>{name}</h1>
