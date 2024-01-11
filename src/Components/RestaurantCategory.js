@@ -1,13 +1,12 @@
 
-import { useState } from "react";
+
 import ItemList from "./Itemlist";
 
-const RestaurantCategory = ({ data }) => {
-   const[item,setitem]=useState(false)
+const RestaurantCategory = ({ data,Showitem,setshowindex }) => {
+   
    const handlechange =()=>{
-      // toggle  the value of item
-       return setitem(!item)
-   }
+    setshowindex()
+  }
   return (
     <div className="w-full max-w-screen-md mx-auto">
       {/* Header */}
@@ -23,7 +22,7 @@ const RestaurantCategory = ({ data }) => {
       </div>
 
       {/* Item List */}
-     { item && <ItemList items={data.itemCards} />}
+     { Showitem&& <ItemList items={data.itemCards} />}
     </div>
   );
 };
