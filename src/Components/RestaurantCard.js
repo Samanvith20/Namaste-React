@@ -34,7 +34,7 @@ const Restaurantcards = (props) => {
         </div>
         <div>{avgRating.toFixed(1)} stars</div>
       </div>
-      <div className="text-gray-600 mb-2">Cost for Two: ${costForTwo}</div>
+      <div className="text-gray-600 mb-2">{costForTwo}</div>
       <div className="text-gray-600">Delivery Time: {sla.deliveryTime} minutes</div>
     </div>
   );
