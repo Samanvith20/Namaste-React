@@ -1,10 +1,13 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
+   const cartitems=useSelector((store)=>store.cart.items)
+   
   const [buttonname, setbuttonname] = useState("login");
   const onlineStatus = useOnlineStatus();
    return (
@@ -21,7 +24,9 @@ const Header = () => {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
           <li><Link to="/grocery">Grocery</Link></li>
-          <li>cart</li>
+          <li className=" font-bold text-xl">
+            <Link to="/cart">Cart - ({cartitems.length} items)</Link>
+          </li>
          
           <button
             className="btn-name px-2 py-1 bg-green-500 text-white rounded cursor-pointer transition duration-300 hover:bg-green-600"
