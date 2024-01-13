@@ -17,9 +17,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform any necessary form submission logic here
-
-    // For simplicity, just set isSubmitted to true after a short delay
+    
     setTimeout(() => {
       setIsSubmitted(true);
     }, 1000);
@@ -28,6 +26,10 @@ const Contact = () => {
   return (
     <div className="contact-container bg-gray-100 p-8">
       <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+      
+      <p className="text-gray-700 mb-6">
+        Please share your information and inquiries with us. We appreciate your feedback and would love to hear from you!
+      </p>
 
       {isSubmitted ? (
         <p className="text-green-600 mb-6">Thank you for submitting!</p>
