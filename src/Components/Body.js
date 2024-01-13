@@ -78,7 +78,7 @@ const Body = () => {
         </button>
         <div className=" ml-auto">
           <button
-            className=" px-4 py-2 bg-green-500 text-white rounded cursor-pointer transition duration-300 hover:bg-green-600"
+            className=" px-4 py-2 bg-green-500 text-white rounded cursor-pointer transition duration-300 hover:bg-green-600 mr-8"  
             onClick={handleFilterClick}
           >
             Top Rated Restaurants
