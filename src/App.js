@@ -12,13 +12,16 @@ import userStore from "./utils/userStore";
 import Cart from "./Components/Cart";
 
 
+
 const Applayout = () => {
   return (
     <Provider store={userStore}>
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+     
+        <div>
+          <Header />
+          <Outlet />
+        </div>
+     
     </Provider>
   );
 };
